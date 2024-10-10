@@ -30,8 +30,8 @@
             display: flex;
             flex-wrap: wrap; /* Wrap chips on smaller screens */
             justify-content: center; /* Center the chips */
-            margin: 10px auto; /* Center nav */
             border-radius: 10px; /* Rounded corners for the background strip */
+            margin: 10px auto; /* Center nav */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
         }
 
@@ -44,9 +44,9 @@
             margin: 5px; /* Space between chips */
             font-size: 14px; /* Font size */
             min-width: 80px; /* Minimum width for each chip */
-            flex: 1; /* Allow chips to grow */
-            max-width: 150px; /* Max width to prevent overflow */
             transition: background-color 0.3s ease; /* Transition effect */
+            flex: 1 1 auto; /* Allow chips to grow and shrink */
+            max-width: 120px; /* Max width to prevent overflow */
         }
 
         nav a:hover {

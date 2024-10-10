@@ -29,7 +29,7 @@
             padding: 10px 0; /* Vertical padding for the strip */
             display: flex;
             flex-wrap: nowrap; /* Keep chips in one row */
-            justify-content: center; /* Center chips */
+            justify-content: flex-start; /* Align chips to the left */
             margin: 10px auto; /* Center nav */
             overflow-x: auto; /* Allow horizontal scrolling */
             border-radius: 10px; /* Rounded corners for the background strip */
@@ -40,7 +40,7 @@
             background-color: #4CAF50; /* Chip background color */
             color: white; /* Chip text color */
             text-decoration: none;
-            padding: 8px 15px; /* Padding for chips */
+            padding: 10px 15px; /* Padding for chips */
             border-radius: 20px; /* Rounded corners for chip effect */
             margin: 5px; /* Space between chips */
             font-size: 14px; /* Font size */
@@ -102,9 +102,13 @@
                 font-size: 24px;
             }
 
+            nav {
+                padding: 5px 0; /* Reduce padding on smaller screens */
+            }
+
             nav a {
-                font-size: 14px; /* Maintain smaller font size */
-                padding: 8px; /* Maintain smaller padding */
+                font-size: 12px; /* Smaller font size */
+                padding: 8px; /* Smaller padding */
             }
 
             section {
@@ -205,4 +209,4 @@
 </script>
 
 </body>
-</html>
+        </html>

@@ -26,26 +26,25 @@
 
         nav {
             display: flex;
-            flex-wrap: nowrap; /* No wrapping on larger screens */
-            overflow-x: auto; /* Allow horizontal scrolling */
-            background-color: #4CAF50;
-            padding: 5px;
-            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping of chips */
+            justify-content: center; /* Center chips */
+            margin: 10px auto; /* Center nav */
+            padding: 10px; /* Padding around nav */
         }
 
         nav a {
-            color: white;
+            background-color: #4CAF50; /* Chip background color */
+            color: white; /* Chip text color */
             text-decoration: none;
-            padding: 8px 15px; /* Reduced padding */
-            font-size: 14px; /* Reduced font size */
-            margin: 0 5px;
-            text-align: center;
-            flex: none; /* Prevent flex items from growing */
+            padding: 8px 15px; /* Padding for chips */
+            border-radius: 20px; /* Rounded corners for chip effect */
+            margin: 5px; /* Space between chips */
+            font-size: 14px; /* Font size */
+            transition: background-color 0.3s ease; /* Transition effect */
         }
 
         nav a:hover {
-            background-color: #45a049;
-            border-radius: 5px;
+            background-color: #45a049; /* Darker shade on hover */
         }
 
         section {
@@ -97,15 +96,10 @@
                 font-size: 24px;
             }
 
-            nav {
-                flex-direction: column; /* Change to vertical layout for smaller screens */
-            }
-
             nav a {
-                padding: 8px; /* Maintain smaller padding */
                 font-size: 14px; /* Maintain smaller font size */
-                width: 100%; /* Make links full width */
-                margin: 5px 0; /* Space between links */
+                padding: 8px; /* Maintain smaller padding */
+                margin: 5px; /* Space between chips */
             }
 
             section {

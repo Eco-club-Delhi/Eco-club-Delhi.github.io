@@ -6,51 +6,97 @@
     <title>Eco Club - Reclaim the Earth</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(45deg, #ffcc00, #ff3399, #3399ff, #66ff66);
+            color: #ff0066;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
-            background-color: #2e8b57;
+            background: repeating-linear-gradient(45deg, #000, #ffcc00 10%, #ff3399 20%);
             padding: 20px;
             text-align: center;
-            color: white;
+            color: #00ff99;
+            font-size: 48px;
+            letter-spacing: 5px;
+            text-shadow: 4px 4px #ff3399;
         }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: #444;
+            justify-content: space-around;
+            background: #ffcc00;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 20px;
+            border-bottom: 5px solid #ff0066;
         }
         nav a {
-            padding: 14px 20px;
-            color: white;
+            color: #000;
             text-decoration: none;
-            text-transform: uppercase;
+            padding: 10px 15px;
+            border: 3px dashed #ff3399;
+            background: #66ff66;
+            font-family: 'Impact', sans-serif;
+            letter-spacing: 2px;
         }
         nav a:hover {
-            background-color: #2e8b57;
+            background: #ff0066;
+            color: #fff;
+            border: 3px dashed #000;
         }
         section {
-            padding: 20px;
+            padding: 50px;
+            margin: 20px;
+            font-size: 24px;
             max-width: 1200px;
-            margin: auto;
+            background: #ffcc00;
+            color: #000;
+            border: 10px solid #ff0066;
+            transform: rotate(1deg);
+            box-shadow: 10px 10px 0 #ff3399;
         }
         .tab-content {
             display: none;
+            font-family: 'Courier New', monospace;
         }
         .tab-content.active {
             display: block;
+            background: #66ff66;
+            padding: 30px;
+            transform: rotate(-2deg);
+            border: 5px solid #000;
         }
         footer {
-            background-color: #444;
-            color: white;
+            background: #ff3399;
+            color: #000;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            border-top: 5px dashed #000;
+            font-family: 'Papyrus', cursive;
+        }
+        .join-button {
+            background-color: #ff0066;
+            color: #fff;
+            padding: 15px 30px;
+            border: 5px dotted #ffcc00;
+            font-size: 20px;
+            font-family: 'Arial Black', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            transform: scale(1.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .join-button:hover {
+            background-color: #00ffcc;
+            color: #000;
+            border-color: #ff3399;
+            transform: scale(1.2) rotate(2deg);
         }
     </style>
 </head>
@@ -64,7 +110,7 @@
     <a href="#" class="tab-link" data-tab="home">Home</a>
     <a href="#" class="tab-link" data-tab="story">Our Story</a>
     <a href="#" class="tab-link" data-tab="projects">Projects</a>
-    <a href="#" class="tab-link" data-tab="symbols">Significance of Symbols</a>
+    <a href="#" class="tab-link" data-tab="symbols">Symbols</a>
     <a href="#" class="tab-link" data-tab="resources">Resources</a>
     <a href="#" class="tab-link" data-tab="join">Join Us</a>
 </nav>
@@ -77,7 +123,7 @@
 
     <div id="story" class="tab-content">
         <h2>Our Story</h2>
-        <p>Our club draws inspiration from eco-anarchist movements, where the power of youth has driven environmental change. We stand against systems of exploitation, envisioning a world where nature is valued and protected.</p>
+        <p>Our club draws inspiration from youth-led environmental movements, where the power of young people has driven meaningful change. We stand against systems that harm the environment, envisioning a world where nature is valued and protected.</p>
     </div>
 
     <div id="projects" class="tab-content">
@@ -91,22 +137,20 @@
 
     <div id="symbols" class="tab-content">
         <h2>Significance of Our Symbols</h2>
-        <p><strong>Fist and Sapling:</strong> The fist represents youth rebellion and power, while the sapling signifies the growth and restoration we aim to bring to the earth.</p>
-        <p><strong>Leaf Flag:</strong> Minimalist design reflecting purity, nature, and anarchy. The leaf embodies the eco-consciousness at the heart of our mission.</p>
-        <p><strong>Slogan:</strong> 'Reclaim the Earth' captures the essence of taking back our planet from destructive forces.</p>
+        <p><strong>Fist and Sapling:</strong> The fist represents youth empowerment and determination, while the sapling signifies the growth and restoration we aim to bring to the earth.</p>
+        <p><strong>Leaf Flag:</strong> Minimalist design reflecting purity, nature, and a deep commitment to ecological consciousness. The leaf symbolizes the environmental focus of our mission.</p>
+        <p><strong>Slogan:</strong> 'Reclaim the Earth' captures the essence of taking back our planet from destructive forces and restoring its natural balance.</p>
     </div>
 
     <div id="resources" class="tab-content">
         <h2>Resources</h2>
-        <p>We provide a list of eco texts, educational materials on environmental sustainability, and resources for youth activists.</p>
+        <p>We provide educational materials on environmental sustainability and resources for youth activists looking to make a difference in their communities.</p>
     </div>
 
     <div id="join" class="tab-content">
         <h2>Join Us</h2>
-        <p>If you’re passionate about the environment and want to make a difference, join us in reclaiming the earth. Sign up here.</p>
-        <a href="https://forms.gle/buQmEipSxrFxGmfa9">
-            <button>Join here</button>
-        </a>
+        <p>If you’re passionate about the environment and want to take action, join us in reclaiming the earth. Click the button below to sign up.</p>
+        <a href="https://forms.gle/buQmEipSxrFxGmfa9" class="join-button" target="_blank">Join the Eco Club</a>
     </div>
 </section>
 
@@ -124,11 +168,12 @@
             tabs.forEach(t => t.classList.remove('active'));
             contents.forEach(c => c.classList.remove('active'));
 
+            const targetId = this.getAttribute('data-tab');
             this.classList.add('active');
-            document.getElementById(this.dataset.tab).classList.add('active');
+            document.getElementById(targetId).classList.add('active');
         });
     });
 </script>
 
 </body>
-</html>
+        </html>

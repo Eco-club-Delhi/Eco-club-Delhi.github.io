@@ -26,20 +26,21 @@
 
         nav {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-wrap: nowrap; /* No wrapping on larger screens */
+            overflow-x: auto; /* Allow horizontal scrolling */
             background-color: #4CAF50;
-            padding: 10px;
+            padding: 5px;
+            margin-bottom: 10px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px;
-            font-size: 16px;
-            margin: 5px;
+            padding: 8px 15px; /* Reduced padding */
+            font-size: 14px; /* Reduced font size */
+            margin: 0 5px;
             text-align: center;
-            flex: 1;
+            flex: none; /* Prevent flex items from growing */
         }
 
         nav a:hover {
@@ -96,9 +97,15 @@
                 font-size: 24px;
             }
 
+            nav {
+                flex-direction: column; /* Change to vertical layout for smaller screens */
+            }
+
             nav a {
-                font-size: 14px;
-                padding: 8px;
+                padding: 8px; /* Maintain smaller padding */
+                font-size: 14px; /* Maintain smaller font size */
+                width: 100%; /* Make links full width */
+                margin: 5px 0; /* Space between links */
             }
 
             section {
@@ -113,18 +120,6 @@
         }
 
         @media (max-width: 480px) {
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin: 5px 0;
-            }
-
-            section {
-                margin: 5px;
-            }
-
             footer {
                 font-size: 12px;
             }
@@ -211,4 +206,4 @@
 </script>
 
 </body>
-        </html>
+</html>

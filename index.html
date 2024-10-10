@@ -11,9 +11,9 @@
             color: #333;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -21,17 +21,16 @@
             padding: 20px;
             text-align: center;
             color: white;
-            font-size: 32px;
+            font-size: 28px;
         }
 
         nav {
             background-color: #c8e6c9; /* Background color for the nav strip */
-            padding: 10px 0; /* Vertical padding for the strip */
+            padding: 10px; /* Vertical padding for the strip */
             display: flex;
-            flex-wrap: nowrap; /* Keep chips in one row */
-            justify-content: flex-start; /* Align chips to the left */
+            flex-wrap: wrap; /* Wrap chips on smaller screens */
+            justify-content: center; /* Center the chips */
             margin: 10px auto; /* Center nav */
-            overflow-x: auto; /* Allow horizontal scrolling */
             border-radius: 10px; /* Rounded corners for the background strip */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
         }
@@ -44,8 +43,9 @@
             border-radius: 20px; /* Rounded corners for chip effect */
             margin: 5px; /* Space between chips */
             font-size: 14px; /* Font size */
-            min-width: 100px; /* Minimum width for each chip */
-            flex-shrink: 0; /* Prevent chips from shrinking */
+            min-width: 80px; /* Minimum width for each chip */
+            flex: 1; /* Allow chips to grow */
+            max-width: 150px; /* Max width to prevent overflow */
             transition: background-color 0.3s ease; /* Transition effect */
         }
 
@@ -102,18 +102,14 @@
                 font-size: 24px;
             }
 
-            nav {
-                padding: 5px 0; /* Reduce padding on smaller screens */
-            }
-
             nav a {
                 font-size: 12px; /* Smaller font size */
                 padding: 8px; /* Smaller padding */
+                margin: 3px; /* Reduced margin for chips */
             }
 
             section {
                 padding: 15px;
-                margin: 10px; /* Smaller margin */
             }
 
             .join-button {
@@ -127,8 +123,25 @@
                 font-size: 12px;
             }
 
+            header {
+                font-size: 20px; /* Smaller header font size */
+            }
+
+            nav {
+                padding: 5px; /* Less padding for nav on small screens */
+            }
+
+            nav a {
+                font-size: 10px; /* Smaller font size for very small screens */
+                padding: 5px; /* Less padding for very small screens */
+            }
+
+            section {
+                padding: 10px;
+            }
+
             .join-button {
-                font-size: 14px;
+                font-size: 12px; /* Smaller button font size */
             }
         }
     </style>

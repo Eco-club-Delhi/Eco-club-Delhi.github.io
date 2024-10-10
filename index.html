@@ -26,10 +26,11 @@
 
         nav {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping of chips */
+            flex-wrap: nowrap; /* Keep chips in one row */
             justify-content: center; /* Center chips */
             margin: 10px auto; /* Center nav */
             padding: 10px; /* Padding around nav */
+            overflow-x: auto; /* Allow horizontal scrolling */
         }
 
         nav a {
@@ -40,6 +41,8 @@
             border-radius: 20px; /* Rounded corners for chip effect */
             margin: 5px; /* Space between chips */
             font-size: 14px; /* Font size */
+            min-width: 100px; /* Minimum width for each chip */
+            flex-shrink: 0; /* Prevent chips from shrinking */
             transition: background-color 0.3s ease; /* Transition effect */
         }
 
@@ -99,7 +102,6 @@
             nav a {
                 font-size: 14px; /* Maintain smaller font size */
                 padding: 8px; /* Maintain smaller padding */
-                margin: 5px; /* Space between chips */
             }
 
             section {

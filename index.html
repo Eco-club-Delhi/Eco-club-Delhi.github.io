@@ -88,6 +88,28 @@
     margin: 0 auto; /* Center the blog posts */
     padding: 20px; /* Padding around the blog container */
     }
+        .full-post {
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Inner padding */
+    margin: 16px; /* Space around full post */
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.full-post button {
+    background-color: #4CAF50; /* Green button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    margin-bottom: 10px; /* Space below button */
+}
+
+.full-post button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 
         .tab-content {
             display: none;
@@ -223,28 +245,35 @@
     <div id="blog" class="tab-content">
     <h2>Blog</h2>
     <div class="blog-container">
-        <div class="blog-post">
+        <div class="blog-post" onclick="showPost('post1')">
             <h2>Post 1: The Green Revolution</h2>
             <p>This post discusses the importance of the green revolution and how it has shaped modern agriculture to be more sustainable and environmentally friendly.</p>
         </div>
-        <div class="blog-post">
+        <div class="blog-post" onclick="showPost('post2')">
             <h2>Post 2: Youth and Climate Action</h2>
             <p>Youth activism has played a key role in shaping the climate movement globally. In this post, we explore notable youth-led movements making a real difference.</p>
         </div>
-        <div class="blog-post">
+        <div class="blog-post" onclick="showPost('post3')">
             <h2>Post 3: Renewable Energy Sources</h2>
             <p>This post delves into various renewable energy sources like solar, wind, and hydropower, explaining their benefits and the latest innovations in the field.</p>
         </div>
-        <div class="blog-post">
+        <div class="blog-post" onclick="showPost('post4')">
             <h2>Post 4: Sustainable Living Tips</h2>
             <p>In this post, we provide practical tips for leading a more sustainable lifestyle, including reducing waste, conserving water, and choosing eco-friendly products.</p>
         </div>
-        <div class="blog-post">
+        <div class="blog-post" onclick="showPost('post5')">
             <h2>Post 5: The Importance of Biodiversity</h2>
             <p>Biodiversity is crucial for ecosystem health. This post discusses the various ways we can protect species and preserve habitats for future generations.</p>
         </div>
     </div>
+
+    <div id="fullPost" class="full-post" style="display: none;">
+        <button onclick="closePost()">Close</button>
+        <h2 id="fullPostTitle"></h2>
+        <p id="fullPostContent"></p>
     </div>
+    </div>
+    
     <div id="join" class="tab-content">
         <h2>Join the Eco Club</h2>
         <p>If you're passionate about the environment and want to get involved, we'd love to have you. Click below to sign up!</p>
@@ -255,7 +284,41 @@
 <footer>
     &copy; 2024 Eco Club | Reclaim the Earth
 </footer>
+<script>
+    function showPost(postId) {
+        const posts = {
+            post1: {
+                title: 'Post 1: The Green Revolution',
+                content: 'This post discusses the importance of the green revolution and how it has shaped modern agriculture to be more sustainable and environmentally friendly. It highlights the advancements in technology and techniques that have enabled farmers to increase crop yields while preserving the environment.'
+            },
+            post2: {
+                title: 'Post 2: Youth and Climate Action',
+                content: 'Youth activism has played a key role in shaping the climate movement globally. In this post, we explore notable youth-led movements making a real difference, their goals, and how they have influenced policy and public opinion.'
+            },
+            post3: {
+                title: 'Post 3: Renewable Energy Sources',
+                content: 'This post delves into various renewable energy sources like solar, wind, and hydropower, explaining their benefits and the latest innovations in the field. We discuss the importance of transitioning to renewable energy to combat climate change.'
+            },
+            post4: {
+                title: 'Post 4: Sustainable Living Tips',
+                content: 'In this post, we provide practical tips for leading a more sustainable lifestyle, including reducing waste, conserving water, and choosing eco-friendly products. The focus is on small, manageable changes that anyone can make.'
+            },
+            post5: {
+                title: 'Post 5: The Importance of Biodiversity',
+                content: 'Biodiversity is crucial for ecosystem health. This post discusses the various ways we can protect species and preserve habitats for future generations. We explore the interconnections between species and the importance of conservation efforts.'
+            }
+        };
 
+        const post = posts[postId];
+        document.getElementById('fullPostTitle').textContent = post.title;
+        document.getElementById('fullPostContent').textContent = post.content;
+        document.getElementById('fullPost').style.display = 'block';
+    }
+
+    function closePost() {
+        document.getElementById('fullPost').style.display = 'none';
+    }
+    </script>
 <script>
     const tabs = document.querySelectorAll('.tab-link');
     const contents = document.querySelectorAll('.tab-content');

@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Post 1: Sustainable Living Tips",
+    "date": "2024-10-10",
+    "content": "Here are some great tips on sustainable living...",
+    "author": "Eco Club Team",
+    "category": "Sustainability"
+  },
+  {
+    "title": "Post 2: Eco-Friendly Technologies",
+    "date": "2024-10-12",
+    "content": "Let's explore some innovative eco-friendly technologies...",
+    "author": "Eco Club Team",
+    "category": "Technology"
+  },
+  {
+    "title": "Post 3: Urban Design and Sustainability",
+    "date": "2024-10-15",
+    "content": "Exploring how urban design can contribute to sustainability...",
+    "author": "Eco Club Team",
+    "category": "Urban Design"
+  }
+  // Add more blog posts as needed
+]

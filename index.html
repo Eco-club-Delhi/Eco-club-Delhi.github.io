@@ -285,7 +285,16 @@
     &copy; 2024 Eco Club | Reclaim the Earth
 </footer>
 <script>
+    // Store references to all blog posts
+    const blogPosts = document.querySelectorAll('.blog-post');
+
     function showPost(postId) {
+        // Hide all blog posts
+        blogPosts.forEach(post => {
+            post.style.display = 'none';
+        });
+
+        // Define the posts with their full content
         const posts = {
             post1: {
                 title: 'Post 1: The Green Revolution',
@@ -309,16 +318,25 @@
             }
         };
 
+        // Get the selected post details
         const post = posts[postId];
         document.getElementById('fullPostTitle').textContent = post.title;
         document.getElementById('fullPostContent').textContent = post.content;
+
+        // Show the full post
         document.getElementById('fullPost').style.display = 'block';
     }
 
     function closePost() {
+        // Show all blog posts again
+        blogPosts.forEach(post => {
+            post.style.display = 'block';
+        });
+
+        // Hide the full post
         document.getElementById('fullPost').style.display = 'none';
     }
-    </script>
+</script>
 <script>
     const tabs = document.querySelectorAll('.tab-link');
     const contents = document.querySelectorAll('.tab-content');

@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Club - Reclaim the Earth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Combined CSS Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -25,39 +26,41 @@
         }
 
         nav {
-            background-color: #c8e6c9; /* Background color for the nav strip */
-            padding: 10px; /* Vertical padding for the strip */
+            background-color: #c8e6c9;
+            padding: 10px;
             display: flex;
-            flex-wrap: wrap; /* Wrap chips on smaller screens */
-            justify-content: center; /* Center the chips */
-            border-radius: 10px; /* Rounded corners for the background strip */
-            margin: 10px auto; /* Center nav */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 10px auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            background-color: #4CAF50; /* Chip background color */
-            color: white; /* Chip text color */
+            background-color: #4CAF50;
+            color: white;
             text-decoration: none;
-            padding: 10px 15px; /* Padding for chips */
-            border-radius: 20px; /* Rounded corners for chip effect */
-            margin: 5px; /* Space between chips */
-            font-size: 14px; /* Font size */
-            min-width: 80px; /* Minimum width for each chip */
-            transition: background-color 0.3s ease; /* Transition effect */
-            flex: 1 1 auto; /* Allow chips to grow and shrink */
-            max-width: 120px; /* Max width to prevent overflow */
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+            min-width: 80px;
+            transition: background-color 0.3s ease;
+            flex: 1 1 auto;
+            max-width: 120px;
+            text-align: center;
         }
 
-        nav a:hover {
-            background-color: #45a049; /* Darker shade on hover */
+        nav a:hover, nav a.active {
+            background-color: #45a049;
         }
 
         section {
             flex: 1;
             padding: 20px;
-            margin: 10px auto; /* Adjusted margin */
-            max-width: 900px; /* Set a max width */
+            margin: 10px auto;
+            max-width: 900px;
+            width: 90%;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -88,13 +91,63 @@
             text-decoration: none;
             font-size: 16px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            width: 100%; /* Full width for the button */
+            width: 100%;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
 
         .join-button:hover {
             background-color: #45a049;
+        }
+
+        /* Blog Styles */
+        #search, #category-filter {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .post {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h2 {
+            margin-top: 0;
+        }
+
+        .post p {
+            line-height: 1.6;
+        }
+
+        #pagination-controls {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        #pagination-controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #pagination-controls button:hover {
+            background-color: #45a049;
+        }
+
+        #page-number {
+            font-size: 16px;
+            padding: 10px;
+            align-self: center;
         }
 
         @media (max-width: 768px) {
@@ -103,9 +156,9 @@
             }
 
             nav a {
-                font-size: 12px; /* Smaller font size */
-                padding: 8px; /* Smaller padding */
-                margin: 3px; /* Reduced margin for chips */
+                font-size: 12px;
+                padding: 8px;
+                margin: 3px;
             }
 
             section {
@@ -119,29 +172,21 @@
         }
 
         @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+            }
+
+            nav a {
+                font-size: 10px;
+                padding: 5px;
+            }
+
             footer {
                 font-size: 12px;
             }
 
-            header {
-                font-size: 20px; /* Smaller header font size */
-            }
-
-            nav {
-                padding: 5px; /* Less padding for nav on small screens */
-            }
-
-            nav a {
-                font-size: 10px; /* Smaller font size for very small screens */
-                padding: 5px; /* Less padding for very small screens */
-            }
-
-            section {
-                padding: 10px;
-            }
-
             .join-button {
-                font-size: 12px; /* Smaller button font size */
+                font-size: 12px;
             }
         }
     </style>
@@ -158,6 +203,7 @@
     <a href="#" class="tab-link" data-tab="projects">Projects</a>
     <a href="#" class="tab-link" data-tab="symbols">Symbols</a>
     <a href="#" class="tab-link" data-tab="resources">Resources</a>
+    <a href="#" class="tab-link" data-tab="blog">Blog</a>
     <a href="#" class="tab-link" data-tab="join">Join Us</a>
 </nav>
 
@@ -199,9 +245,33 @@
 </ul>
     </div>
 
+    <div id="blog" class="tab-content">
+        <!-- Search bar -->
+        <input type="text" id="search" placeholder="Search blog posts..." oninput="searchPosts()">
+
+        <!-- Filter by category -->
+        <select id="category-filter" onchange="filterPosts()">
+            <option value="">All Categories</option>
+            <option value="Sustainability">Sustainability</option>
+            <option value="Technology">Technology</option>
+            <option value="Urban Design">Urban Design</option>
+            <!-- Add more categories as needed -->
+        </select>
+
+        <!-- Blog posts -->
+        <div id="blog-posts"></div>
+
+        <!-- Pagination Controls -->
+        <div id="pagination-controls">
+            <button onclick="previousPage()">Previous</button>
+            <span id="page-number">Page 1</span>
+            <button onclick="nextPage()">Next</button>
+        </div>
+    </div>
+
     <div id="join" class="tab-content">
         <h2>Join Us</h2>
-        <p>If you’re passionate about the environment and want to take action, join us in reclaiming the earth. Click the button below to sign up.</p>
+        <p>If you're passionate about the environment and want to take action, join us in reclaiming the earth. Click the button below to sign up.</p>
         <a href="https://forms.gle/buQmEipSxrFxGmfa9" class="join-button" target="_blank">Join the Eco Club</a>
     </div>
 </section>
@@ -211,6 +281,7 @@
 </footer>
 
 <script>
+    // Tab functionality
     const tabs = document.querySelectorAll('.tab-link');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -223,9 +294,91 @@
             const targetId = this.getAttribute('data-tab');
             this.classList.add('active');
             document.getElementById(targetId).classList.add('active');
+
+            // If the blog tab is activated, load the blog posts
+            if (targetId === 'blog') {
+                loadBlogPosts();
+            }
         });
     });
+
+    // Blog functionality
+    let posts = [];
+    let filteredPosts = [];
+    const postsPerPage = 5;
+    let currentPage = 1;
+
+    function loadBlogPosts() {
+        if (posts.length === 0) {
+            // Fetch blog posts from posts.json
+            fetch('posts.json')
+                .then(response => response.json())
+                .then(data => {
+                    posts = data;
+                    filteredPosts = posts;
+                    displayPosts();
+                })
+                .catch(error => console.error('Error loading blog posts:', error));
+        } else {
+            displayPosts();
+        }
+    }
+
+    function displayPosts() {
+        const postsContainer = document.getElementById('blog-posts');
+        postsContainer.innerHTML = '';
+
+        // Pagination logic
+        const start = (currentPage - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        const pagePosts = filteredPosts.slice(start, end);
+
+        pagePosts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.className = 'post';
+            postElement.innerHTML = `
+                <h2>${post.title}</h2>
+                <p><strong>Date:</strong> ${post.date} | <strong>Author:</strong> ${post.author}</p>
+                <p>${post.content}</p>
+                <p><strong>Category:</strong> ${post.category}</p>
+            `;
+            postsContainer.appendChild(postElement);
+        });
+
+        document.getElementById('page-number').textContent = `Page ${currentPage}`;
+    }
+
+    function nextPage() {
+        if ((currentPage * postsPerPage) < filteredPosts.length) {
+            currentPage++;
+            displayPosts();
+        }
+    }
+
+    function previousPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayPosts();
+        }
+    }
+
+    function filterPosts() {
+        const category = document.getElementById('category-filter').value;
+        filteredPosts = posts.filter(post => !category || post.category === category);
+        currentPage = 1;
+        displayPosts();
+    }
+
+    function searchPosts() {
+        const query = document.getElementById('search').value.toLowerCase();
+        filteredPosts = posts.filter(post =>
+            post.title.toLowerCase().includes(query) ||
+            post.content.toLowerCase().includes(query)
+        );
+        currentPage = 1;
+        displayPosts();
+    }
 </script>
 
 </body>
-</html>
+                                                                                                                                                                                               </html>
